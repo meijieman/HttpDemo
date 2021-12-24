@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.major.http"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // 协程
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
+
+//    implementation 'org.nanohttpd:nanohttpd:2.2.0'
+    implementation 'org.nanohttpd:nanohttpd-webserver:2.3.1'
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // 兼容 com.aliyun:alidns20150109:2.0.1， Android 才需要
+    implementation('xerces:xercesImpl:2.12.0') {
+        exclude group: 'xml-apis', module: 'xml-apis'
+    }
+    implementation 'com.aliyun:alidns20150109:2.0.1'
+//    implementation 'com.aliyun:tea-openapi:0.0.19'
+//    implementation 'com.aliyun:domain20180129:1.0.1'
+//    implementation 'com.aliyun:aliyun-java-sdk-ecs:4.17.6'
+//    implementation 'com.aliyun:aliyun-java-sdk-core:4.5.21'
+//    implementation 'com.aliyun:aliyun-java-sdk-alidns:2.6.29'
+}
