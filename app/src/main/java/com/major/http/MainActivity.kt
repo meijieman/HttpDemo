@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             Log.i(TAG, "The server stopped.")
         }
 
+        // 需要把html 放到 /sdcard/webapps/下，然后浏览器访问 localhost:8083/index.html
         val root = File(Environment.getExternalStorageDirectory(), "webapps")
         val ss = SimpleWebServer("", 8082, root, false, "*")
 

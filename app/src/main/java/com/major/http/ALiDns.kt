@@ -101,7 +101,9 @@ class ALiDns {
     @Throws(Exception::class)
     private fun createClient(): Client {
         return Client(Config()
-            .setAccessKeyId("LTAI5tPNRP3p8m1TYTY1PJzU")
-            .setAccessKeySecret("csNjEmoZAyQByBkipE4juA7bVZj4g3"))
+            // 需要修改为自己的 accesskey
+            .setAccessKeyId("aaa")
+            // 修改修改为自己的 secret
+            .setAccessKeySecret("bbb"))
     }
 }
